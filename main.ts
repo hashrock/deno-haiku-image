@@ -22,19 +22,75 @@ const handler = router({
     const html = `
       <html>
       <head>
-        <style>body{background: #ddd;}</style>
+        <style>
+          body{background: #EEE; font-size: 18px;}
+          input{font-size: inherit; padding: 0.5em 1em;}
+          form{
+            max-width: 600px;
+            margin: 0 auto;
+          }
+          label{
+            min-width: 6em;
+            display: inline-block;
+            text-align: right;
+            margin-right: 1em;
+          }
+          button{
+            font-size: inherit;
+            background: #f3ede1;
+            border: 1px solid #ccc;
+            padding: 0.5em 1em;
+            cursor: pointer;
+            margin: 0.5em 0;
+            width: 80%;
+          }
+          input{
+            flex: 1;
+          }
+          .form-inline{
+            display: flex;
+            margin-top: 0.5em;
+            align-items: center;
+          }
+          .form-center{
+            text-align: center;
+          }
+          .center{
+            text-align: center;
+          }
+          img{
+            margin: 0 auto;
+            display: block;
+          }
+          h1{
+            font-size: 1.5em;
+            text-align: center;
+          }
+        </style>
         <meta property="og:title" content="Deno Haiku">
         <meta property="og:image" content="https://haiku.deno.dev/ogp.png${search}">
       </head>
       <body>
+      <h1>Deno Haiku Image Generator</h1>
       <form action="/" method="get">
-      <div><label>Line1</label><input type="text" name="line1" value="${line1}"></div>
-      <div><label>Line2</label><input type="text" name="line2" value="${line2}"></div>
-      <div><label>Line3</label><input type="text" name="line3" value="${line3}"></div>
-      <div><label>Author</label><input type="text" name="author" value="${author}"></div>
-      <button class="btn">Update</button>
+      <div class="form-inline"><label>Line1</label><input type="text" name="line1" value="${line1}"></div>
+      <div class="form-inline"><label>Line2</label><input type="text" name="line2" value="${line2}"></div>
+      <div class="form-inline"><label>Line3</label><input type="text" name="line3" value="${line3}"></div>
+      <div class="form-inline"><label>Author</label><input type="text" name="author" value="${author}"></div>
+      <div class="form-center">
+        <button class="btn">Update</button>
+      </div>
       </form>
       <img src="./ogp.png${search}" />
+
+      <div class="center">
+        <p>
+          <a href="http://twitter.com/share?url=https://haiku.deno.dev/${
+      encodeURIComponent(search)
+    }">Tweet this image</a> | 
+          <a href="https://github.com/hashrock/deno-haiku-image">GitHub</a>
+        </p>
+      </div>
       </body>
       </html>
     `;
