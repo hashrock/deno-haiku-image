@@ -62,12 +62,12 @@ const handler = router({
             <image href="${dataUrl}" x="0" y="0" height="600" width="800" />
             <g>
                 <text id="test-text" font-family="sans-serif" font-size="32" font-weight="bold" fill="#111827">
-                  <tspan x="51" y="${90 + 60 * 0}">${line1}</tspan>
-                  <tspan x="51" y="${90 + 60 * 1}">${line2}</tspan>
-                  <tspan x="51" y="${90 + 60 * 2}">${line3}</tspan>
+                  <tspan x="51" y="${200 + 60 * 0}">${line1}</tspan>
+                  <tspan x="51" y="${200 + 60 * 1}">${line2}</tspan>
+                  <tspan x="51" y="${200 + 60 * 2}">${line3}</tspan>
                 </text>
                 <text id="monospace" font-family="monospace" font-size="32" font-weight="normal" fill="#2D53A4">
-                    <tspan x="502" y="280" text-anchor="end">- ${author}</tspan>
+                    <tspan x="502" y="400" text-anchor="end">- ${author}</tspan>
                 </text>
             </g>
         </svg>`);
