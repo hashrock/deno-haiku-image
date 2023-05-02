@@ -69,6 +69,8 @@ const handler = router({
         </style>
         <meta property="og:title" content="Deno Haiku">
         <meta property="og:image" content="https://haiku.deno.dev/ogp.png${search}">
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:image" content="https://haiku.deno.dev/ogp.png${search}" />
       </head>
       <body>
       <h1>Deno Haiku Image Generator</h1>
@@ -85,9 +87,11 @@ const handler = router({
 
       <div class="center">
         <p>
-          <a href="http://twitter.com/share?url=https://haiku.deno.dev/${encodeURIComponent(
-            search
-          )}">Tweet this image</a> | 
+          <a href="http://twitter.com/share?url=https://haiku.deno.dev/${
+      encodeURIComponent(
+        search,
+      )
+    }">Tweet this image</a> | 
           <a href="https://github.com/hashrock/deno-haiku-image">GitHub</a>
         </p>
       </div>
