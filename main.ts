@@ -1,9 +1,9 @@
 /** @jsx h */
 
-import { serve } from "https://deno.land/std@0.145.0/http/server.ts";
-import { render } from "https://deno.land/x/resvg_wasm/mod.ts";
-import { router } from "https://crux.land/router@0.0.5";
-import * as mod from "https://deno.land/std@0.154.0/encoding/base64.ts";
+import { serve } from "https://deno.land/std@0.185.0/http/server.ts";
+import { render } from "https://deno.land/x/resvg_wasm@0.2.0/mod.ts";
+import { router } from "https://deno.land/x/rutt@0.1.0/mod.ts";
+import * as mod from "https://deno.land/std@0.185.0/encoding/base64.ts";
 
 const readData = await Deno.readFile("./bg.jpg");
 const encodedData = mod.encode(readData);
@@ -85,9 +85,9 @@ const handler = router({
 
       <div class="center">
         <p>
-          <a href="http://twitter.com/share?url=https://haiku.deno.dev/${
-      encodeURIComponent(search)
-    }">Tweet this image</a> | 
+          <a href="http://twitter.com/share?url=https://haiku.deno.dev/${encodeURIComponent(
+            search
+          )}">Tweet this image</a> | 
           <a href="https://github.com/hashrock/deno-haiku-image">GitHub</a>
         </p>
       </div>
@@ -95,15 +95,12 @@ const handler = router({
       </html>
     `;
 
-    return new Response(
-      html,
-      {
-        status: 200,
-        headers: {
-          "Content-Type": "text/html",
-        },
+    return new Response(html, {
+      status: 200,
+      headers: {
+        "Content-Type": "text/html",
       },
-    );
+    });
   },
   "GET@/ogp.png": async (_req) => {
     const url = new URL(_req.url);
