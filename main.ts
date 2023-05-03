@@ -22,6 +22,7 @@ const handler = router({
     const html = `
       <html>
       <head>
+        <title>Deno Haiku Image Generator</title>
         <style>
           body{background: #EEE; font-size: 18px;}
           input{font-size: inherit; padding: 0.5em 1em;}
